@@ -1,3 +1,4 @@
+# Play for add clients and interconnect repos on RHEL 7.
 ---
 - name: Add interconnect repo on rhel7 VM.
   #hosts: rhel7

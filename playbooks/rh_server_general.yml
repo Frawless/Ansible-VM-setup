@@ -1,5 +1,5 @@
+# Play for install general items like VIM, WGET... on RHEL machines.
 ---
-# subscription-manager repos --disable rhel-7-server-tus-rpms -> It's necesary to turn it off on RHEL 64b
 - name: Update repos.
   yum:
     name: '*'

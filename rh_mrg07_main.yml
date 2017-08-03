@@ -1,3 +1,6 @@
+# Main
+# Start with subscribe (uncomment)
+# Followed by clear yum cache, add repos and install utilities
 ---
 # - name: Subcription.
 #   hosts: mrg07-virt
@@ -7,10 +10,12 @@
 #     #- include: playbooks/rh_unregister.yml
 
 # Subscription by command (force)
+#  subscription-manager repos --disable rhel-7-server-tus-rpms ->  It's necesary to turn it off on RHEL 64b
 # - name: Subcription.
 #   hosts: local-virt
 #   pre_tasks:
 #     - command: subscription-manager register --username 'qa@redhat.com' --password 'redhatqa'  --baseurl=cdn.stage.redhat.com  --serverurl=subscription.rhn.stage.redhat.com --auto-attach
+
 - name: Clear cache of yum.
   hosts: mrg07-virt
   pre_tasks:
