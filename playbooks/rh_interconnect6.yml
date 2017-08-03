@@ -1,7 +1,0 @@
-# Play for add clients and interconnect repos on RHEL 6.
----
-- name: Add interconnect repo on rhel6 VM.
-  shell: subscription-manager repos --enable=amq-interconnect-1-for-rhel-6-server-rpms
-
-- name: Add client repo on rhel6 VM.
-  shell: subscription-manager repos --enable=a-mq-clients-1-for-rhel-6-server-beta-rpms

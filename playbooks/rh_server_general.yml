@@ -25,8 +25,15 @@
     name: qpid-dispatch-router
     state: latest
 
-# - name: Add EPEL repository
-#   yum_repository:
-#     name: epel
-#     description: EPEL YUM repo
-#     baseurl: https://download.fedoraproject.org/pub/epel/$releasever/$basearch/
+- name: Install pip.
+  command: yum install -y python-devel libffi-devel openssl-devel gcc python-pip
+  when: ansible_distribution == "RedHat" and ansible_distribution_major_version > '7'
+
+- name: Install pip.
+  yum:
+    name: python-pip
+    state: latest
+  when: ansible_distribution == "RedHat" and ansible_distribution_major_version < '7'
+
+- name: Update pip.
+  command: pip install --upgrade pip

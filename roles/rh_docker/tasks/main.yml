@@ -1,0 +1,11 @@
+- name: Add public key.
+  command: rpm --import "https://sks-keyservers.net/pks/lookup?op=get&search=0xee6d536cf7dc86e2d7d56f59a178ac6c6238f52e"
+
+- name: Add repository.
+  command: yum-config-manager --add-repo https://packages.docker.com/1.13/yum/repo/main/centos/7
+
+- name: Update cache.
+  commnd: yum makecache fast
+
+- name: Install docker.
+  command: yum install docker-engine

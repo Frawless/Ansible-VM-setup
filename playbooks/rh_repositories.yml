@@ -1,0 +1,39 @@
+# Play for add clients and interconnect repos on RHEL 7.
+---
+- name: Add interconnect repo on rhel7 VM.
+  #hosts: rhel7
+  shell: subscription-manager repos --enable=amq-interconnect-1-for-rhel-7-server-rpms
+  when: ansible_distribution_major_version > '6'
+
+- name: Add client repo on rhel7 VM..
+  shell: subscription-manager repos --enable=a-mq-clients-1-for-rhel-7-server-beta-rpms
+  when: ansible_distribution_major_version > '6'
+
+- name: Add interconnect repo on rhel6 VM.
+  shell: subscription-manager repos --enable=amq-interconnect-1-for-rhel-6-server-rpms
+  when: ansible_distribution_major_version < '7'
+
+- name: Add client repo on rhel6 VM.
+  shell: subscription-manager repos --enable=a-mq-clients-1-for-rhel-6-server-beta-rpms
+  when: ansible_distribution_major_version < '7'
+
+- name: Install yum-utill.
+  command: yum install -y yum-utils device-mapper-persistenvirt-data lvm2
+  when: ansible_distribution == "RedHat" and ansible_distribution_major_version > '6'
+
+- name: Add epel repos on rhel7 VM.
+  command: yum-config-manager --add-repo=https://dl.fedoraproject.org/pub/epel/7/x86_64/
+  when: ansible_distribution == "RedHat" and ansible_distribution_major_version > '6'
+
+- name: Download EPEL GPG key.
+  command: wget -O /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7 https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7
+  when: ansible_distribution == "RedHat" and ansible_distribution_major_version > '6'
+
+- name: Import GPG key.
+  command: rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+  when: ansible_distribution == "RedHat" and ansible_distribution_major_version > '6'
+
+
+- name: Add epel repos on rhel6 VM.
+  command: rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm --force
+  when: ansible_distribution == "RedHat" and ansible_distribution_major_version < '7'

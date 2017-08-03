@@ -16,34 +16,26 @@
 #   pre_tasks:
 #     - command: subscription-manager register --username 'qa@redhat.com' --password 'redhatqa'  --baseurl=cdn.stage.redhat.com  --serverurl=subscription.rhn.stage.redhat.com --auto-attach
 
-- name: Clear cache of yum.
+- name: Set-up virtual machines.
   hosts: mrg07-virt
   pre_tasks:
-    - command: yum clean all
+      - include: playbooks/rh_repositories.yml
+      - name: Clean yum cache
+        command: yum clean all
+      - include: playbooks/rh_server_general.yml
 
-- name: Set-up VM.
-  hosts: rhel6
-  pre_tasks:
-    - include: playbooks/rh_interconnect6.yml
-
-- hosts: rhel7
-  pre_tasks:
-    - include: playbooks/rh_interconnect7.yml
-
-- name: Set-up virtual machines on mrg07 server with addtional utilities.
-  hosts: mrg07-virt
-  pre_tasks:
-    - include: playbooks/rh_server_general.yml
 
   roles:
       - { role: ansiblebit.oracle-java, oracle_java_set_as_default: yes }
-      - { role: amq-client }
-      - { role: amq-broker,
-          amq_broker_download_url: 'https://repository.jboss.org/nexus/content/groups/public/org/jboss/rh-messaging/AMQ7/A-MQ7/7.0.0-SNAPSHOT/A-MQ7-7.0.0-20170416.065912-221-bin.zip',
-          amq_broker_download_dest: '/tmp',
-          amq_broker_install_dest: '/home/{{ amq_broker_user }}',
-          amq_broker_user: jamq,
-          amq_broker_install_link: 'jboss-amq-7',
-          amq_broker_instance_dir: jboss-amq-7-i0,
-          amq_broker_skip_create: true,
-          amq_broker_skip_configure: true }
+      # Bugged atm (3.8. 2017y)
+      # - { role: amq-client }
+      # - { role: amq-broker,
+      #     amq_broker_download_url: 'https://repository.jboss.org/nexus/content/groups/public/org/jboss/rh-messaging/AMQ7/A-MQ7/7.0.0-SNAPSHOT/A-MQ7-7.0.0-20170416.065912-221-bin.zip',
+      #     amq_broker_download_dest: '/tmp',
+      #     amq_broker_install_dest: '/home/{{ amq_broker_user }}',
+      #     amq_broker_user: jamq,
+      #     amq_broker_install_link: 'jboss-amq-7',
+      #     amq_broker_instance_dir: jboss-amq-7-i0,
+      #     amq_broker_skip_create: true,
+      #     amq_broker_skip_configure: true }
+       - { role: rh-docker }
