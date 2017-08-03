@@ -1,0 +1,9 @@
+---
+# tasks file for amq-client
+- name: Configure AMQ clients repository
+  template:
+    src: templates/amq-clients-10.repo.j2
+    dest: "/etc/yum.repos.d/amq-clients-10.repo"
+    owner: "root"
+    group: "root"
+    mode: 0644

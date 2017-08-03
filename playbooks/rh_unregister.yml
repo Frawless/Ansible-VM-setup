@@ -1,0 +1,4 @@
+---
+- name: Unregister user.
+  rhn_register:
+    state: absent

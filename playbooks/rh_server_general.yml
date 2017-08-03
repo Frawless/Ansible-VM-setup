@@ -1,0 +1,32 @@
+---
+# subscription-manager repos --disable rhel-7-server-tus-rpms -> It's necesary to turn it off on RHEL 64b
+- name: Update repos.
+  yum:
+    name: '*'
+    state: latest
+
+- name: Install VIM on RHEL VM's.
+  yum:
+    name: vim-enhanced
+    state: latest
+
+- name: Install WGET on RHEL VM's.
+  yum:
+    name: wget
+    state: latest
+
+- name: libselinux-python install.
+  yum:
+    name: libselinux-python
+    state: latest
+
+- name: Install qpid-dispatch
+  yum:
+    name: qpid-dispatch-router
+    state: latest
+
+# - name: Add EPEL repository
+#   yum_repository:
+#     name: epel
+#     description: EPEL YUM repo
+#     baseurl: https://download.fedoraproject.org/pub/epel/$releasever/$basearch/

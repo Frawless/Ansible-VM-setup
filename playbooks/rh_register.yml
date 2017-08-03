@@ -1,0 +1,8 @@
+---
+- name: Register user
+  roles:
+    - ansible-rhn-register:
+      rhn_username: 'qa@redhat.com'
+      rhn_password: 'redhatqa'
+      rhn_register_server_url: 'cdn.stage.redhat.com'
+      rhn_register_base_url: 'subscription.rhn.stage.redhat.com'
