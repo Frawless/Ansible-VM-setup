@@ -4,31 +4,22 @@ Role Name
 Install following programs
 --------------------------
 
-vim enhanced
-
-wget
-
-pip (latest)
-
-yum-utils
-
-libselinux-python
-
-qpid-dispatch
-
-device-mapper-persistenvirt-data
-
-lvm2
+- vim enhanced
+- wget
+- pip (latest)
+- yum-utils
+- libselinux-python
+- qpid-dispatch
+- device-mapper-persistenvirt-data
+- lvm2
 
 
 Add following repositories
 --------------------------
 
-amq-interconnect for RHEL 6&7
-
-amq-clients for RHEL 6&7
-
-epel
+- amq-interconnect for RHEL 6&7
+- amq-clients for RHEL 6&7
+- epel
 
 Requirements
 ------------
