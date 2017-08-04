@@ -15,7 +15,6 @@
 # Play for add clients and interconnect repos on RHEL 7.
 ---
 - name: Add interconnect repo on rhel7 VM.
-  #hosts: rhel7
   shell: subscription-manager repos --enable=amq-interconnect-1-for-rhel-7-server-rpms
   when: ansible_distribution_major_version > '6'
 

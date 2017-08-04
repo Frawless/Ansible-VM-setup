@@ -51,3 +51,8 @@
 
 - name: Update pip.
   command: pip install --upgrade pip
+
+- name: Install git.
+  yum:
+    name: git
+    state: latest

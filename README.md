@@ -1,4 +1,4 @@
-Role Name
+Set-up fresh VM
 =========
 
 Install following programs

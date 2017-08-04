@@ -23,3 +23,13 @@
 
 - name: Install docker.
   command: yum install docker-engine
+
+- name: Enable docker.
+  service:
+    name: docker
+    enabled: yes
+
+- name: Start docker.
+  service:
+    name: docker
+    state: started
