@@ -39,6 +39,11 @@
     name: qpid-dispatch-router
     state: latest
 
+- name: Install qpid-dispatch tools.
+  yum:
+    name: qpid-dispatch-tools
+    state: latest
+
 - name: Install pip.
   command: yum install -y python-devel libffi-devel openssl-devel gcc python-pip
   when: ansible_distribution == "RedHat" and ansible_distribution_major_version > '7'
@@ -55,4 +60,9 @@
 - name: Install git.
   yum:
     name: git
+    state: latest
+
+- name: Install tcpdump
+  yum:
+    name: tcpdump
     state: latest
