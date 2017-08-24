@@ -1,4 +1,8 @@
 ---
 - hosts: all
   tasks:
-     - include: tasks/main.yml
+    - include: rh_repositories.yml
+    - name: Clean yum cache
+      command: yum clean all
+    - include: rh_server_general.yml
+    - include: docker.yml
