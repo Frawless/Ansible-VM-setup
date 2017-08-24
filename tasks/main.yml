@@ -1,0 +1,39 @@
+# Copyright 2017 Red Hat, Inc. and/or its affiliates
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Subscribe is needed!
+
+- name: Set-up virtual machines.
+  pre_tasks:
+      - include: tasks/rh_repositories.yml
+      - name: Clean yum cache
+        command: yum clean all
+      - include: tasks/rh_server_general.yml
+
+  roles:
+      - { role: ansiblebit.oracle-java, oracle_java_set_as_default: yes }
+      # Bugged atm (3.8. 2017y)
+      # - { role: amq-client }
+      - { role: epel }
+      - { role: rh-docker }
+      - { role: cli-rhea }
+      - { role: amq-broker,
+          amq_broker_download_url: 'https://repository.jboss.org/nexus/content/groups/public/org/jboss/rh-messaging/AMQ7/A-MQ7/7.0.0-SNAPSHOT/A-MQ7-7.0.0-20170416.065912-221-bin.zip',
+          amq_broker_download_dest: '/tmp',
+          amq_broker_install_dest: '/home/{{ amq_broker_user }}',
+          amq_broker_user: jamq,
+          amq_broker_install_link: 'jboss-amq-7',
+          amq_broker_instance_dir: jboss-amq-7-i0,
+          amq_broker_skip_create: true,
+          amq_broker_skip_configure: true }

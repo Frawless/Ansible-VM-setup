@@ -11,13 +11,14 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
----
-- name: Ensure Java VM is present {{ amq_broker_jvm }}
-  when:
-    - amq_broker_jvm is defined and amq_broker_jvm_install is defined and amq_broker_jvm_install == true
-  package: name={{ amq_broker_jvm }} state=present
 
-- name: Create broker instance
-  command: "{{ amq_broker_instance_create_command }}"
-  args:
-    chdir: "{{ amq_broker_install_dest }}/{{ amq_broker_install_link }}/bin"
+all: install clean
+		printf '[defaults]\nroles_path=roles/' >ansible.cfg
+
+install:
+		ansible-galaxy install -r tasks/requirements.yml -p roles/
+		ansible-playbook -i inventory tasks/main.yml
+
+clean:
+		rm -rf ansible.cfg
+		rm -rf roles/*

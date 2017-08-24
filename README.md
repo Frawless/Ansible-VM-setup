@@ -30,8 +30,9 @@ None.
 Usage
 ----------------
 
-ansible-playbook -i <HOST_FILE> rh_vm_main.yml
-
+```bash
+$ make
+```
 
 License
 -------
