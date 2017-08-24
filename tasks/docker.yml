@@ -19,7 +19,7 @@
   command: yum-config-manager --add-repo https://packages.docker.com/1.13/yum/repo/main/centos/7
 
 - name: Update cache.
-  commnd: yum makecache fast
+  command: yum makecache fast
 
 - name: Install docker.
   command: yum install docker-engine

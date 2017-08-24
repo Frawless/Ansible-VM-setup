@@ -13,11 +13,11 @@
 # limitations under the License.
 
 all: install clean
-		printf '[defaults]\nroles_path=roles/' >ansible.cfg
+		printf '[defaults]\nroles_path=../roles/' >ansible.cfg
 
 install:
 		ansible-galaxy install -r tasks/requirements.yml -p roles/
-		ansible-playbook -i inventory tasks/main.yml
+		ansible-playbook -i inventory start.yml
 
 clean:
 		rm -rf ansible.cfg
