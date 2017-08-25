@@ -14,15 +14,12 @@
 
 # Subscribe is needed!
 ---
-# - name: Set-up virtual machines.
-#   command: yum clean all
-  # tasks:
-  #   - include: rh_repos_{{ ansible_distribution_major_version }}.yml
-  #   # - name: Clean yum cache
-  #   #   command: yum clean all
-  #   - include: rh_server_general.yml
-  #   - include: docker.yml
+- include: rh_repos_6.yml
+  when: ansible_distribution_major_version < 7
 
-- include: rh_repos_{{ ansible_distribution_major_version }}.yml
+- include: rh_repos_7.yml
+  when: ansible_distribution_major_version > 6
+
 - include: rh_server_general.yml
 - include: docker.yml
+  when: ansible_distribution_major_version >
