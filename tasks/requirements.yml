@@ -11,12 +11,12 @@
   name: ansiblebit.oracle-java
 
 # Register
-- src: https://github.com/msgqe/ansible-rhn-register.git
-  name: rh_register
+# - src: https://github.com/msgqe/ansible-rhn-register.git
+  # name: rh_register
 
 # Subscribe
-- src: https://github.com/msgqe/ansible-rhn-subscribe.git
-  name: rh_subscribe
+# - src: https://github.com/msgqe/ansible-rhn-subscribe.git
+#   name: rh_subscribe
 
 # Client
 - src: https://github.com/Frawless/interconnect-ansible-install-client.git

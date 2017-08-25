@@ -1,12 +1,12 @@
 ---
 dependencies:
   # Register
-  - src: https://github.com/msgqe/ansible-rhn-register.git
-    name: rh_register
+  # - src: https://github.com/msgqe/ansible-rhn-register.git
+  #   name: rh_register
 
   # Subscribe
-  - src: https://github.com/msgqe/ansible-rhn-subscribe.git
-    name: rh_subscribe
+  # - src: https://github.com/msgqe/ansible-rhn-subscribe.git
+  #   name: rh_subscribe
 
   - src: https://github.com/ansiblebit/oracle-java
     # path: ../roles
@@ -16,6 +16,6 @@ dependencies:
   - src: geerlingguy.repo-epel
     name: epel
 
-  # client 
+  # client
   - src: https://github.com/Frawless/interconnect-ansible-install-client.git
     name: cli-rhea
