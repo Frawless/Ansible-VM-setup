@@ -14,26 +14,10 @@
 
 # Subscribe is needed!
 
-# - name: Set-up virtual machines.
-#   tasks:
-- include: rh_repositories.yml
-- name: Clean yum cache
-  command: yum clean all
-- include: rh_server_general.yml
-- include: docker.yml
-
-  # roles:
-      # - { role: ansiblebit.oracle-java, oracle_java_set_as_default: yes }
-      # Bugged atm (3.8. 2017y)
-      # - { role: amq-client }
-      # - { role: epel }
-      # - { role: cli-rhea }
-      # - { role: amq-broker,
-          # amq_broker_download_url: 'https://repository.jboss.org/nexus/content/groups/public/org/jboss/rh-messaging/AMQ7/A-MQ7/7.0.0-SNAPSHOT/A-MQ7-7.0.0-20170416.065912-221-bin.zip',
-          # amq_broker_download_dest: '/tmp',
-          # amq_broker_install_dest: '/home/{{ amq_broker_user }}',
-          # amq_broker_user: jamq,
-          # amq_broker_install_link: 'jboss-amq-7',
-          # amq_broker_instance_dir: jboss-amq-7-i0,
-          # amq_broker_skip_create: true,
-          # amq_broker_skip_configure: true }
+- name: Set-up virtual machines.
+  tasks:
+  - include: rh_repos_{{ ansible_distribution_major_version }}.yml
+  - name: Clean yum cache
+    command: yum clean all
+  - include: rh_server_general.yml
+  - include: docker.yml
