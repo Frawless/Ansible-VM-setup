@@ -1,9 +1,0 @@
----
-- name: Add interconnect repo on rhel6 VM.
-  command: subscription-manager repos --enable=amq-interconnect-1-for-rhel-6-server-rpms
-
-- name: Add client repo on rhel6 VM.
-  command: subscription-manager repos --enable=a-mq-clients-1-for-rhel-6-server-beta-rpms
-
-- name: Install yum-utill.
-  command: yum install -y yum-utils device-mapper-persistenvirt-data lvm2

@@ -27,3 +27,4 @@ dependencies:
   # Docker
   - src: https://github.com/geerlingguy/ansible-role-docker.git
     name: docker
+    when: ansible_distribution_major_version == '7'
