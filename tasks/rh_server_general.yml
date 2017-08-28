@@ -53,3 +53,6 @@
   yum:
     name: tcpdump
     state: latest
+
+- name: Install yum-utill.
+  command: yum install -y yum-utils device-mapper-persistenvirt-data lvm2
