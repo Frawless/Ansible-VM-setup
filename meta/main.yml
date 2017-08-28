@@ -9,7 +9,6 @@ dependencies:
   #   name: rh_subscribe
 
   - src: https://github.com/ansiblebit/oracle-java
-    # path: ../roles
     name: ansiblebit.oracle-java
 
   # epel repo

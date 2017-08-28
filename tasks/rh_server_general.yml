@@ -31,13 +31,11 @@
 
 - name: Install yum-utils, git, tcpdump.
   yum:
-    name: {{ item }}
-    state: latest
-    with_items:
-      - vim-enhanced
-      - wget
-      - yum-utils
-      - lvm2
-      - device-mapper-persistenvirt-data
-      - git
-      - tcpdump
+    name={{ item }}
+    state=latest
+  with_items:
+    - vim-enhanced
+    - wget
+    - yum-utils
+    - git
+    - tcpdump
