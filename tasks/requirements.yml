@@ -25,3 +25,7 @@
 # Router
 - src: https://github.com/Frawless/ansible-qpid-dispatch.git
   name: ansible-qpid-dispatch
+
+# Docker
+- src: https://github.com/geerlingguy/ansible-role-docker.git
+  name: docker
