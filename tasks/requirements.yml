@@ -23,5 +23,5 @@
   name: cli-rhea
 
 # Router
-- src: https://github.com/enkeys/ansible-qpid-dispatch.git
+- src: https://github.com/Frawless/ansible-qpid-dispatch.git
   name: ansible-qpid-dispatch

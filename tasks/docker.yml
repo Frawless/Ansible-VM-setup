@@ -21,6 +21,9 @@
 - name: Update cache.
   command: yum makecache fast
 
+- name: Yum upgrade
+  command: yum upgrade
+
 - name: Install docker.
   command: yum install docker-engine
 
