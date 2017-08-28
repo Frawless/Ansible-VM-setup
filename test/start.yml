@@ -11,28 +11,14 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+---
+- name: Bring up docker containers
+  hosts: localhost
+  roles:
+    - role: provision_docker
+      provision_docker_inventory_group: "{{ groups['all'] }}"
 
-- name: Add public key.
-  command: rpm --import "https://sks-keyservers.net/pks/lookup?op=get&search=0xee6d536cf7dc86e2d7d56f59a178ac6c6238f52e"
-
-- name: Add repository.
-  command: yum-config-manager --add-repo https://packages.docker.com/1.13/yum/repo/main/centos/7
-
-- name: Update cache.
-  command: yum makecache fast
-
-- name: Yum upgrade
-  command: yum upgrade
-
-- name: Install docker.
-  command: yum install docker-engine
-
-- name: Enable docker.
-  service:
-    name: docker
-    enabled: yes
-
-- name: Start docker.
-  service:
-    name: docker
-    state: started
+- name: Install all
+  hosts: all
+  roles:
+    - { role: Ansible-VM-setup }

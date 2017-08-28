@@ -19,24 +19,9 @@
     name: '*'
     state: latest
 
-- name: Install VIM on RHEL VM's.
-  yum:
-    name: vim-enhanced
-    state: latest
-
-- name: Install WGET on RHEL VM's.
-  yum:
-    name: wget
-    state: latest
-
 - name: libselinux-python install.
   yum:
     name: libselinux-python
-    state: latest
-
-- name: Install qpid-dispatch
-  yum:
-    name: qpid-dispatch-router
     state: latest
 
 - name: Install qpid-dispatch tools.
@@ -44,15 +29,15 @@
     name: qpid-dispatch-tools
     state: latest
 
-- name: Install git.
+- name: Install yum-utils, git, tcpdump.
   yum:
-    name: git
+    name: {{ item }}
     state: latest
-
-- name: Install tcpdump
-  yum:
-    name: tcpdump
-    state: latest
-
-- name: Install yum-utill.
-  command: yum install -y yum-utils device-mapper-persistenvirt-data lvm2
+    with_items:
+      - vim-enhanced
+      - wget
+      - yum-utils
+      - lvm2
+      - device-mapper-persistenvirt-data
+      - git
+      - tcpdump

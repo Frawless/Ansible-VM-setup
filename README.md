@@ -1,46 +1,43 @@
-Set-up fresh VM
+Setup new VM by ansible
 =========
+[![Build Status](https://travis-ci.org/Frawless/Ansible-VM-setup.svg?branch=master)](https://travis-ci.org/Frawless/Ansible-VM-setup)
 
-Install following programs
+## Supported systems
+CentOS 6/7 and RHEL 6/7
+
+## Install following programs
 --------------------------
 
 - vim enhanced
 - wget
-- pip (latest)
-- yum-utils
-- libselinux-python
-- qpid-dispatch
-- device-mapper-persistenvirt-data
-- lvm2
+- qpid-dispatch (Router implementation)
+- cli-rhea (RHEA based client)
+- amq-broker (Broker implementation)
+- with all dependencies
 
-
-Add following repositories
---------------------------
-
-- amq-interconnect for RHEL 6&7
-- amq-clients for RHEL 6&7
-- epel
-
-Requirements
+## Requirements
 ------------
 
 None.
 
+## Tests
+For testing we use the [provision_docker](https://github.com/chrismeyersfsu/provision_docker) playbook.
 
-Usage
-----------------
+### Requirements
+* dokcer_host (by default on localhost)
 
+### How to run tests
 ```bash
-$ make
+$ cd test && make
 ```
 
-License
+## License
 -------
 
 Apache 2.0
 
 
-Author Information
+## Author Information
 ------------------
 
 Messaging QE team @ redhat.com
