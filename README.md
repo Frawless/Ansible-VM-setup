@@ -24,7 +24,7 @@ None.
 For testing we use the [provision_docker](https://github.com/chrismeyersfsu/provision_docker) playbook.
 
 ### Requirements
-* dokcer_host (by default on localhost)
+* docker_host (by default on localhost)
 
 ### How to run tests
 ```bash

@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Play for install general items like VIM, WGET... on RHEL machines.
 ---
 - name: Update repos.
   yum:
@@ -29,13 +28,10 @@
     name: qpid-dispatch-tools
     state: latest
 
-- name: Install yum-utils, git, tcpdump.
+- name: Install yum-utils & tcpdump.
   yum:
     name={{ item }}
     state=latest
   with_items:
-    - vim-enhanced
-    - wget
     - yum-utils
-    - git
     - tcpdump

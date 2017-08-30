@@ -1,5 +1,9 @@
 ---
 dependencies:
+  # AMQ basic server
+  - src: https://github.com/msgqe/ansible-basic-server.git
+    name: ansible-basic-server
+    
   # Register
   # - src: https://github.com/msgqe/ansible-rhn-register.git
   #   name: rh_register
@@ -7,13 +11,6 @@ dependencies:
   # Subscribe
   # - src: https://github.com/msgqe/ansible-rhn-subscribe.git
   #   name: rh_subscribe
-
-  - src: https://github.com/ansiblebit/oracle-java
-    name: ansiblebit.oracle-java
-
-  # epel repo
-  - src: geerlingguy.repo-epel
-    name: epel
 
   # client
   - src: https://github.com/Frawless/interconnect-ansible-install-client.git

@@ -1,12 +1,10 @@
 sudo: required
-dist: trusy
+dist: trusty
 language: python
 python:
   - "2.7"
 
 env:
-  matrix:
-  - OS_TYPE=centos OS_VERSION=7
   global:
     - PATH="/usr/bin:$PATH"
 
@@ -18,10 +16,6 @@ before_install:
   - sudo apt-get update
   - sudo apt-get update -qq
   - sudo apt-get install -y -o Dpkg::Options::="--force-confnew" docker-ce
-  - echo 'DOCKER_OPTS="-H tcp://127.0.0.1:2375 -H unix:///var/run/docker.sock -s devicemapper"' | sudo tee /etc/default/docker > /dev/null
-  - sudo service docker restart
-  - sleep 5
-  - sudo docker pull centos:centos${OS_VERSION}
 
 install:
   - sudo pip install docker-py

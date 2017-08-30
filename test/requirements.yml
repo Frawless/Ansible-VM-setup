@@ -1,22 +1,18 @@
+# AMQ basic server with register
+- src: https://github.com/msgqe/ansible-basic-server.git
+  name: ansible-basic-server
+
+# # Register
+# - src: https://github.com/msgqe/ansible-rhn-register.git
+#   name: rh_register
+#
+# # Subscribe
+# - src: https://github.com/msgqe/ansible-rhn-subscribe.git
+#   name: rh_subscribe
+
 # provision_docker
 - src: https://github.com/chrismeyersfsu/provision_docker.git
   name: provision_docker
-
-# epel
-- src: geerlingguy.repo-epel
-  name: epel
-
-# Java repo
-- src: https://github.com/ansiblebit/oracle-java.git
-  name: ansiblebit.oracle-java
-
-# Register
-- src: https://github.com/msgqe/ansible-rhn-register.git
-  name: rh_register
-
-# Subscribe
-- src: https://github.com/msgqe/ansible-rhn-subscribe.git
-  name: rh_subscribe
 
 # Client
 - src: https://github.com/Frawless/interconnect-ansible-install-client.git
