@@ -5,7 +5,7 @@ Setup new VM by ansible
 ## Supported systems
 CentOS 6/7 and RHEL 6/7
 
-## Install following programs
+## Install following
 --------------------------
 
 - vim enhanced
