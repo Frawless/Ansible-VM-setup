@@ -14,6 +14,10 @@
 - src: https://github.com/chrismeyersfsu/provision_docker.git
   name: provision_docker
 
+# # epel repo
+# - src: geerlingguy.repo-epel
+#   name: epel
+
 # Client
 - src: https://github.com/Frawless/interconnect-ansible-install-client.git
   name: cli-rhea

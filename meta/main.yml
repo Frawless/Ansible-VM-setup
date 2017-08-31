@@ -3,7 +3,7 @@ dependencies:
   # AMQ basic server
   - src: https://github.com/msgqe/ansible-basic-server.git
     name: ansible-basic-server
-    
+
   # Register
   # - src: https://github.com/msgqe/ansible-rhn-register.git
   #   name: rh_register
@@ -11,6 +11,13 @@ dependencies:
   # Subscribe
   # - src: https://github.com/msgqe/ansible-rhn-subscribe.git
   #   name: rh_subscribe
+
+  # - src: https://github.com/ansiblebit/oracle-java
+  #   name: ansiblebit.oracle-java
+
+  # # epel repo
+  # - src: geerlingguy.repo-epel
+  #   name: epel
 
   # client
   - src: https://github.com/Frawless/interconnect-ansible-install-client.git
@@ -20,6 +27,17 @@ dependencies:
   - src: https://github.com/Frawless/ansible-qpid-dispatch.git
     name: ansible-qpid-dispatch
 
+<<<<<<< HEAD
+=======
+  # AMQ basic server
+  - src: https://github.com/msgqe/ansible-basic-server.git
+    name: ansible-basic-server
+
+  # Amq-broker repository
+  - src: https://github.com/msgqe/ansible-amq-broker.git
+    name: amq-broker
+
+>>>>>>> ad580d3... UPDATE: Epel and JAVA removed, some utilities removed (installed from ansible-basic-server)
   # Docker
   - src: https://github.com/geerlingguy/ansible-role-docker.git
     name: docker
