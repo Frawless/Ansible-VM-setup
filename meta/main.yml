@@ -1,9 +1,5 @@
 ---
 dependencies:
-  # AMQ basic server
-  - src: https://github.com/msgqe/ansible-basic-server.git
-    name: ansible-basic-server
-
   # Register
   - src: https://github.com/msgqe/ansible-rhn-register.git
     name: rh_register
