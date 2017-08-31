@@ -6,13 +6,13 @@
 - src: https://github.com/msgqe/ansible-basic-server.git
   name: ansible-basic-server
 
-# # Register
-# - src: https://github.com/msgqe/ansible-rhn-register.git
-#   name: rh_register
-#
-# # Subscribe
-# - src: https://github.com/msgqe/ansible-rhn-subscribe.git
-#   name: rh_subscribe
+# Register
+- src: https://github.com/msgqe/ansible-rhn-register.git
+  name: rh_register
+
+# Subscribe
+- src: https://github.com/msgqe/ansible-rhn-subscribe.git
+  name: rh_subscribe
 
 # Amq-broker repository
 - src: https://github.com/msgqe/ansible-amq-broker.git
