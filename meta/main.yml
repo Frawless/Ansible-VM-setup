@@ -20,8 +20,6 @@ dependencies:
   - src: https://github.com/Frawless/ansible-qpid-dispatch.git
     name: ansible-qpid-dispatch
 
-<<<<<<< HEAD
-=======
   # AMQ basic server
   - src: https://github.com/msgqe/ansible-basic-server.git
     name: ansible-basic-server
@@ -31,7 +29,6 @@ dependencies:
   - src: https://github.com/Frawless/ansible-amq-broker.git
     name: amq-broker
 
->>>>>>> ad580d3... UPDATE: Epel and JAVA removed, some utilities removed (installed from ansible-basic-server)
   # Docker
   - src: https://github.com/geerlingguy/ansible-role-docker.git
     name: docker

@@ -3,7 +3,7 @@ Setup new VM by ansible
 [![Build Status](https://travis-ci.org/Frawless/Ansible-VM-setup.svg?branch=master)](https://travis-ci.org/Frawless/Ansible-VM-setup)
 
 ## Supported systems
-CentOS 6/7 and RHEL 6/7
+CentOS 6&7 and RHEL 6&7
 
 ## Install following
 --------------------------

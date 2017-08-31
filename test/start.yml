@@ -18,11 +18,6 @@
     - role: provision_docker
       provision_docker_inventory_group: "{{ groups['all'] }}"
 
-# WORKAROUND - amq-broker role needs cnectivity to all nodes
-# probably bug in file: amq_broker_facts_template.j2  / 37 (looping over all hosts in inventory)
-# - name: Connect to all nodes in topology
-#   hosts: all
-
 - name: Install all
   hosts: all
   roles:
