@@ -1,3 +1,7 @@
+# provision_docker
+- src: https://github.com/chrismeyersfsu/provision_docker.git
+  name: provision_docker
+
 # AMQ basic server with register
 - src: https://github.com/msgqe/ansible-basic-server.git
   name: ansible-basic-server
@@ -10,13 +14,9 @@
 # - src: https://github.com/msgqe/ansible-rhn-subscribe.git
 #   name: rh_subscribe
 
-# provision_docker
-- src: https://github.com/chrismeyersfsu/provision_docker.git
-  name: provision_docker
-
-# # epel repo
-# - src: geerlingguy.repo-epel
-#   name: epel
+# Amq-broker repository
+- src: https://github.com/msgqe/ansible-amq-broker.git
+  name: amq-broker
 
 # Client
 - src: https://github.com/Frawless/interconnect-ansible-install-client.git

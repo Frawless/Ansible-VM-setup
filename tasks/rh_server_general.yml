@@ -23,11 +23,6 @@
     name: libselinux-python
     state: latest
 
-- name: Install qpid-dispatch tools.
-  yum:
-    name: qpid-dispatch-tools
-    state: latest
-
 - name: Install yum-utils & tcpdump.
   yum:
     name={{ item }}
