@@ -15,7 +15,8 @@
   name: rh_subscribe
 
 # Amq-broker repository
-- src: https://github.com/msgqe/ansible-amq-broker.git
+# - src: https://github.com/msgqe/ansible-amq-broker.git
+- src: https://github.com/Frawless/ansible-amq-broker.git
   name: amq-broker
 
 # Client

@@ -27,7 +27,8 @@ dependencies:
     name: ansible-basic-server
 
   # Amq-broker repository
-  - src: https://github.com/msgqe/ansible-amq-broker.git
+  # - src: https://github.com/msgqe/ansible-amq-broker.git
+  - src: https://github.com/Frawless/ansible-amq-broker.git
     name: amq-broker
 
 >>>>>>> ad580d3... UPDATE: Epel and JAVA removed, some utilities removed (installed from ansible-basic-server)
