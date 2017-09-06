@@ -8,6 +8,9 @@ env:
   global:
     - PATH="/usr/bin:$PATH"
 
+notifications:
+    on_success: always # default: change
+    on_failure: never
 
 services:
   - docker
