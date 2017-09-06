@@ -21,4 +21,4 @@
 - name: Install all
   hosts: all
   roles:
-    - { role: Ansible-VM-setup }
+    - { role: ansible-vm-setup }
