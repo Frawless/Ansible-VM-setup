@@ -12,14 +12,30 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-all: install clean
+.PHONY: package_install clean
+TEST_INVENTORY?=test/inventory
+INVENTORY?=inventory
+ANSIBLE_OPTS?=
 
-install:
-		printf '[defaults]\nroles_path=roles/' > ansible.cfg
-		ansible-galaxy install -r test/requirements.yml -p roles/
-		ln -s -f ../Ansible-VM-setup roles/
-		ansible-playbook -i inventory setup.yml
+containers = alain
+
+all: package_install package_configure
 
 clean:
-		rm -rf ansible.cfg
-		rm -rf roles/epel roles/nodejs roles/rh_register roles/rh_subscribe roles/provision_docker roles/cli-rhea roles/ansiblebit.oracle-java
+	rm -rf ansible.cfg test/roles/epel test/roles/nodejs test/roles/rh_register test/roles/rh_subscribe test/roles/provision_docker test/roles/cli-rhea
+	docker rm -f $(containers) || true
+
+test-prepare: clean
+	printf '[defaults]\nroles_path=./test/roles/\n' > ansible.cfg
+	ansible-galaxy install -f -r test/requirements.yml
+	printf '[defaults]\nroles_path=./test/roles:../\n' > ansible.cfg
+
+test: test-prepare
+	ansible-playbook $(ANSIBLE_OPTS) -i $(TEST_INVENTORY) test/test.yml
+	rm -rf ansible.cfg ./build
+	docker rm -f $(containers) || true
+
+setup: test-prepare
+	ansible-playbook $(ANSIBLE_OPTS) -i $(INVENTORY) test/test.yml
+	rm -rf ansible.cfg ./build
+	docker rm -f $(containers) || true

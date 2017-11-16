@@ -11,14 +11,12 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
----
-- name: Bring up docker containers
-  hosts: localhost
-  roles:
-    - role: provision_docker
-      provision_docker_inventory_group: "{{ groups['all'] }}"
+TEST_INVENTORY?=tests/inventory
 
-- name: Install all
-  hosts: all
-  roles:
-    - { role: ansible-vm-setup }
+clean:
+	rm ansible.cfg
+
+test:
+	printf '[defaults]\nroles_path=../' >ansible.cfg
+	ansible-playbook -vvv tests/test.yml -i $(TEST_INVENTORY)
+	rm ansible.cfg

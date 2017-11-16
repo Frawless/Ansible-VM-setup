@@ -2,4 +2,4 @@ localhost ansible_connection=local
 
 [gunslingers]
 roland image="rhmessagingqe/sshd-service:centos7"
-alain image="chrismeyers/centos6"
+alain image="rhmessagingqe/sshd-service:centos6"
