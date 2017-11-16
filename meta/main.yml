@@ -12,10 +12,6 @@ dependencies:
   - src: https://github.com/rh-messaging-qe/ansible-rhea-client.git
     name: cli-rhea
 
-  # Router
-  - src: https://github.com/rh-messaging-qe/ansible-qpid-dispatch.git
-    name: ansible-qpid-dispatch
-
   # AMQ basic server
   - src: https://github.com/msgqe/ansible-basic-server.git
     name: ansible-basic-server
@@ -28,3 +24,7 @@ dependencies:
   - src: https://github.com/geerlingguy/ansible-role-docker.git
     name: docker
     when: ansible_distribution_major_version == '7'
+
+  # Router
+  - src: https://github.com/rh-messaging-qe/ansible-qpid-dispatch.git
+    name: ansible-qpid-dispatch

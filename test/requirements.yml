@@ -22,10 +22,10 @@
 - src: https://github.com/rh-messaging-qe/ansible-rhea-client.git
   name: cli-rhea
 
-# Router
-- src: https://github.com/Frawless/ansible-qpid-dispatch.git
-  name: ansible-qpid-dispatch
-
 # Docker
 - src: https://github.com/geerlingguy/ansible-role-docker.git
   name: docker
+
+# Router
+- src: https://github.com/rh-messaging-qe/ansible-qpid-dispatch.git
+  name: ansible-qpid-dispatch
