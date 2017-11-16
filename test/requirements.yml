@@ -14,6 +14,10 @@
 - src: https://github.com/msgqe/ansible-rhn-subscribe.git
   name: rh_subscribe
 
+# Epel
+- src: https://github.com/msgqe/ansible-epel.git
+  name: ansible-epel
+
 # Amq-broker repository
 - src: https://github.com/msgqe/ansible-amq-broker.git
   name: amq-broker

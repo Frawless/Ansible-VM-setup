@@ -8,6 +8,10 @@ dependencies:
   - src: https://github.com/msgqe/ansible-rhn-subscribe.git
     name: rh_subscribe
 
+  # Epel
+  - src: https://github.com/msgqe/ansible-epel.git
+    name: ansible-epel
+
   # client
   - src: https://github.com/rh-messaging-qe/ansible-rhea-client.git
     name: cli-rhea
