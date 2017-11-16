@@ -36,6 +36,6 @@ test: test-prepare
 	docker rm -f $(containers) || true
 
 setup: test-prepare
-	ansible-playbook $(ANSIBLE_OPTS) -i $(INVENTORY) test/test.yml
+	ansible-playbook $(ANSIBLE_OPTS) -i $(INVENTORY) test/setup.yml
 	rm -rf ansible.cfg ./build
 	docker rm -f $(containers) || true

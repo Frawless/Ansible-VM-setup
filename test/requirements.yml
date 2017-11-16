@@ -16,7 +16,7 @@
 
 # Epel
 - src: https://github.com/msgqe/ansible-epel.git
-  name: ansible-epel
+  name: epel
 
 # Amq-broker repository
 - src: https://github.com/msgqe/ansible-amq-broker.git

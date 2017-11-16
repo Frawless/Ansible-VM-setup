@@ -12,14 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ---
-- name: Bring up docker containers
-  hosts: localhost
-  roles:
-    - role: provision_docker
-      provision_docker_inventory_group: "{{ groups['all'] }}"
-
 - name: Install all
-  hosts: docker_containers
+  hosts: nodes
   roles:
     - {role: ansible-qpid-dispatch, dispatch_package_source_epel: false}
     - { role: ansible-vm-setup }

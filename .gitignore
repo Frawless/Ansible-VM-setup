@@ -1,7 +1,6 @@
 *.retry
 hosts
 roles/*
-setup.yml
 test/roles/ansible-b*
 test/roles/amq-b*
 test/roles/cli*
@@ -11,3 +10,8 @@ test/roles/prov*
 test/roles/rh*
 test/roles/ansible-e*
 test/roles/ansible-q*
+ansible.cfg
+/inventory
+test/roles/pip
+test/roles/ansible-r*
+test/roles/epel
