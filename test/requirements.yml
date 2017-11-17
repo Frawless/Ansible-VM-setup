@@ -30,6 +30,6 @@
 - src: https://github.com/geerlingguy/ansible-role-docker.git
   name: docker
 
-# Router
-- src: https://github.com/rh-messaging-qe/ansible-qpid-dispatch.git
-  name: ansible-qpid-dispatch
+# # Router
+# - src: https://github.com/rh-messaging-qe/ansible-qpid-dispatch.git
+#   name: ansible-qpid-dispatch

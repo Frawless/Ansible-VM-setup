@@ -15,5 +15,5 @@
 - name: Install all
   hosts: nodes
   roles:
-    - {role: ansible-qpid-dispatch, dispatch_package_source_epel: false}
+    # - {role: ansible-qpid-dispatch, dispatch_package_source_epel: false}
     - { role: ansible-vm-setup }
