@@ -22,4 +22,4 @@
   hosts: docker_containers
   roles:
     # - { role: ansible-qpid-dispatch, dispatch_package_source_epel: false}
-    - { role: ansible-vm-setup }
+    - { role: ansible-vm-setup, install_docker: false}
